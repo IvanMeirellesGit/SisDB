@@ -2,7 +2,7 @@ import psycopg2
 from sisdb.config import DB_USER, DB_PASSWORD, DB_NAME, DB_HOST, DB_PORT
 from psycopg2 import OperationalError
 
-def connection():
+def test_connection():
     try:
         with psycopg2.connect(
             dbname=DB_NAME,
@@ -18,5 +18,6 @@ def connection():
     except Exception as e:
         print(f"Erro desconhecido: {e}")
 
+# executa o teste de conexao assim que o pacote do test for importado
 if __name__ == "__main__":
-    connection()
+    test_connection()
